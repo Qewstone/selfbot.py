@@ -151,6 +151,9 @@ class Utility:
         if status == "play":
             await self.bot.change_presence(game=discord.Game(name=message), afk=True)
             color = discord.Color(value=0x43b581).to_rgb()
+        elif status == "watch":
+            await self.bot.change_presence(game=discord.Game(name=message, type=3), afk=True)
+            color = discord.Color(value=0x43b581).to_rgb()
         elif status == "stream":
              await self.bot.change_presence(game=discord.Game(name=message, url="https://twitch.tv", type=1), afk=True)
              color = discord.Color(value=0x551A8B).to_rgb()
